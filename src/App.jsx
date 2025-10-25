@@ -22,7 +22,6 @@
 
 // export default App
 
-
 // Event Handling
 // import React from 'react'
 
@@ -44,7 +43,6 @@
 // }
 
 // export default App
-
 
 // State and Hooks
 // import React from 'react'
@@ -91,7 +89,7 @@
 //     <div>
 //       <button onClick={()=>setDsiplay(!display)}>Toggle</button>
 //       {
-//         display ? <h1>Harsh Singh</h1> : null 
+//         display ? <h1>Harsh Singh</h1> : null
 //         // display
 //       }
 //     </div>
@@ -100,10 +98,7 @@
 
 // export default App
 
-
-
-
-// Multiple Conditional 
+// Multiple Conditional
 // import React from 'react'
 // import { useState } from 'react'
 // function App() {
@@ -113,10 +108,10 @@
 //         <h1>{count}</h1>
 //         <button onClick={()=>setCount(count+1)}>Counter</button>
 //         {
-//           count == 0 ? <h1>Condition 0</h1> 
+//           count == 0 ? <h1>Condition 0</h1>
 //          : count == 1 ? <h1>Condition 1</h1>
 //          : count == 2 ? <h1>Condition 2</h1>
-//          : null 
+//          : null
 //         }
 //     </div>
 //   )
@@ -124,13 +119,11 @@
 
 // export default App
 
-
-
 // Props
 // import React from 'react'
 // import College from './College'
 // function App() {
-//   let collegeNames = ['IET' , 'JKK' , 'SRS' , 'SDF'] 
+//   let collegeNames = ['IET' , 'JKK' , 'SRS' , 'SDF']
 //   return (
 //     <div>
 //       <h1>Props in React JS</h1>
@@ -140,7 +133,6 @@
 // }
 
 // export default App
-
 
 // Passing of data on button click
 // import React from 'react'
@@ -160,6 +152,70 @@
 
 // export default App
 
+// Default Props
+// import React from 'react'
+// import { useState } from 'react'
+// import Person from './Person'
+// function App() {
+//   return (
+//     <div>
+//         <Person name = "Tony Stark"/>
+//         <Person/>
+//     </div>
+//   )
+// }
 
+// export default App
 
-// Default Props 
+// Pass JSX in Props
+// import React from 'react'
+// import Wrapper from './Wrapper'
+
+// function App() {
+//   return (
+//     <div>
+//         <Wrapper>
+//             <h1 style={{color:"red"}}>Hello Everyone!</h1>
+//         </Wrapper>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// Change style with Props
+// import React from 'react'
+// import Wrapper from './Wrapper'
+// function App() {
+//   return (
+//     <div>
+//         <Wrapper color="orange">
+//         <h1>Hello Everyone!</h1>
+//         </Wrapper>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// Get Input Field Value
+import React from "react";
+import { useState } from "react";
+function App() {
+  const [val, setVal] = useState("Harsh Singh");
+  return (
+    <div>
+      <h1>Get Input Field Value</h1>
+      <input
+        type="text"
+        value={val}
+        onChange={(event) => setVal(event.target.value)}
+        placeholder="Enter user name"
+      />
+      <h1>{val}</h1>
+      <button onClick={() => setVal("")}>Clear Value</button>
+    </div>
+  );
+}
+
+export default App;
