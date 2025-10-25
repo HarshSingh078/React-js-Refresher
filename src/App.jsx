@@ -286,3 +286,122 @@
 
 
 // Handle Radio and DropDown
+// import React from 'react'
+// import { useState } from 'react'
+// function App() {
+//     const [gender , setGender] = useState("Male")
+//     const [city , setCity] = useState("Delhi")
+//   return (
+//     <div>
+//         <h4>Select Gender</h4>
+//         <input type="radio" onChange={(event)=>setGender(event.target.value)} name='gender' value={'male'} id='male' checked={gender=="male"} />
+//         <label htmlFor="male">Male</label>
+//         <input type="radio" onChange={(event)=>setGender(event.target.value)} name='gender' value={'female'} id='female' checked={gender=="female"} />
+//         <label htmlFor="female">Female</label>
+//         <h2>Selected Gender : {gender}</h2>
+
+//         <h4>Select City</h4>
+//         <select onChange={(event)=>setCity(event.target.value)} defaultValue={"Delhi"}>
+//             <option value="Noida">Noida</option>
+//             <option value="Gurgaon">Gurgaon</option>
+//             <option value="Delhi">Delhi</option>
+//         </select>
+//         <h2>Selected City : {city}</h2>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// Loop in JSX with MAP
+// import React from 'react'
+// import User from './User'
+// function App() {
+//   return (
+//     <div>
+//         <table border="1">
+//             <thead>
+//                 <tr>
+//                     <td>Name</td>
+//                     <td>Id</td>
+//                     <td>Email</td>
+//                     <td>Age</td>
+//                 </tr>
+//             </thead>
+//             <tbody>
+//                 {
+//                     userData.map((user)=> {
+//                         <tr key={user.id}>
+//                             <td>{user.name}</td>
+//                             <td>{user.email}</td>
+//                             <td>{user.id}</td>
+//                             <td>{user.age}</td>
+//                         </tr>
+//                     })
+//                 }
+//             </tbody>
+//         </table>
+//     </div>
+//   )
+// }
+
+// export default App 
+
+
+
+// Reuse Component
+// import React from 'react'
+// import User from './User'
+// function App() {
+//     const userData = [
+//         {
+//             name : "Robert" , email : "IronMan@1123" , age : "50" , id : 1
+//         } , 
+//         {
+//             name : "Robert" , email : "IronMan@1123" , age : "50" , id : 2
+//         } , 
+//         {
+//             name : "Robert" , email : "IronMan@1123" , age : "50" , id : 3
+//         } 
+//     ]
+//   return (
+//     <div>
+//         <h1>Reuse component</h1>
+//         {
+//             userData.map((user)=> (
+//                 <div key={user.id}> 
+//                     <User userData = {user} />
+//                 </div>
+//             ))
+//         }
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// Digital Clock
+import React , {useState} from 'react'
+import Clock from './Clock'
+
+function App() {
+    const [color , setColor] = useState("green")
+  return (
+    <div>
+        <h1>Digital Clock</h1>
+        <select onChange={(event)=>setColor(event.target.value)}>
+            <option value={"red"}>Red</option>
+            <option value={"blue"}>Blue</option>
+            <option value={"green"}>Green</option>
+            <option value={"orange"}>Orange</option>
+        </select>
+        <Clock color={color}/>
+    </div>
+  )
+}
+
+export default App
