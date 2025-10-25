@@ -199,23 +199,90 @@
 // export default App
 
 // Get Input Field Value
-import React from "react";
-import { useState } from "react";
-function App() {
-  const [val, setVal] = useState("Harsh Singh");
-  return (
-    <div>
-      <h1>Get Input Field Value</h1>
-      <input
-        type="text"
-        value={val}
-        onChange={(event) => setVal(event.target.value)}
-        placeholder="Enter user name"
-      />
-      <h1>{val}</h1>
-      <button onClick={() => setVal("")}>Clear Value</button>
-    </div>
-  );
-}
+// import React from "react";
+// import { useState } from "react";
+// function App() {
+//   const [val, setVal] = useState("Harsh Singh");
+//   return (
+//     <div>
+//       <h1>Get Input Field Value</h1>
+//       <input
+//         type="text"
+//         value={val}
+//         onChange={(event) => setVal(event.target.value)}
+//         placeholder="Enter user name"
+//       />
+//       <h1>{val}</h1>
+//       <button onClick={() => setVal("")}>Clear Value</button>
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
+
+// Controlled Component
+// import React from "react";
+// import { useState } from "react";
+// function App() {
+//   const [name, setName] = useState("");
+//   const [password, setPassword] = useState("");
+//   const [email, setEmail] = useState("");
+//   return (
+//     <div>
+//       <h1>Controlled Component</h1>
+//       <form action="" method="get"></form>
+//       <input
+//         type="text"
+//         value={name}
+//         onChange={(event) => setName(event.target.value)}
+//         placeholder="Enter your name"
+//       />
+//       <input
+//         type="text"
+//         value={password}
+//         onChange={(event) => setPassword(event.target.value)}
+//         placeholder="Enter your password"
+//       />
+//       <input
+//         type="text"
+//         value={email}
+//         onChange={(event) => setEmail(event.target.value)}
+//         placeholder="Enter your email"
+//       />
+//       <button>Submit</button>
+//       <button
+//         onClick={() => {
+//           setName(""), setEmail(""), setPassword("");
+//         }}
+//       >
+//         Clear
+//       </button>
+//       <h3>{name}</h3>
+//       <h3>{password}</h3>
+//       <h3>{email}</h3>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+// Handle Checkbox
+// import React from 'react'
+// import Checkboxes from './Checkboxes'
+
+// function App() {
+//   return (
+//     <div>
+//         <Checkboxes/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// Handle Radio and DropDown
