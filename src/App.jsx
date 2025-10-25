@@ -127,16 +127,39 @@
 
 
 // Props
-import React from 'react'
-import College from './College'
-function App() {
-  let collegeNames = ['IET' , 'JKK' , 'SRS' , 'SDF'] 
-  return (
-    <div>
-      <h1>Props in React JS</h1>
-      <College names = {collegeNames}/>
-    </div>
-  )
-}
+// import React from 'react'
+// import College from './College'
+// function App() {
+//   let collegeNames = ['IET' , 'JKK' , 'SRS' , 'SDF'] 
+//   return (
+//     <div>
+//       <h1>Props in React JS</h1>
+//       <College names = {collegeNames}/>
+//     </div>
+//   )
+// }
 
-export default App
+// export default App
+
+
+// Passing of data on button click
+// import React from 'react'
+// import { useState } from 'react'
+// import Student from './Student'
+// function App() {
+//     const [student , setStudent] = useState("Singh")
+//   return (
+//     <div>
+//         {
+//             student && <Student name={student}/>
+//         }
+//         <button onClick={()=>setStudent("Harsh")}>Change student name</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// Default Props 
