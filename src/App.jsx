@@ -385,21 +385,178 @@
 
 
 // Digital Clock
-import React , {useState} from 'react'
-import Clock from './Clock'
+// import React , {useState} from 'react'
+// import Clock from './Clock'
 
+// function App() {
+//     const [color , setColor] = useState("green")
+//   return (
+//     <div>
+//         <h1>Digital Clock</h1>
+//         <select onChange={(event)=>setColor(event.target.value)}>
+//             <option value={"red"}>Red</option>
+//             <option value={"blue"}>Blue</option>
+//             <option value={"green"}>Green</option>
+//             <option value={"orange"}>Orange</option>
+//         </select>
+//         <Clock color={color}/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// useEffect Hooks
+// import React , {useState , useEffect} from 'react'
+
+// function App() {
+//     const [counter , setCounter] = useState(0)
+//     const [data , setData] = useState(0)
+//     useEffect(()=> {
+//         counterFunction() 
+//     } , [counter])
+//     function counterFunction() {
+//         console.log(counter)
+//     }
+//     function callOnce() {
+//         console.log("callonce function called")
+//     }
+//    return (
+//     <div>
+//         <h1>useEffect Hooks</h1>
+//         <button onClick={()=>setCounter(counter+1)}>Counter : {counter}</button>
+//         <button onClick={()=>setData(data+1)}>Data : {data}</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// Handle Props side effect with useEffect -
+// import React from 'react'
+// import { useState } from 'react'
+// import Counter2 from './Counter2'
+// function App() {
+//     const [count , setCount] = useState(0)
+//     const [data , setData] = useState(0)
+//   return (
+//     <div>
+//         <div>
+//             <Counter2 Counter2 = {count} data={data}/>
+//            <button onClick={()=>setCount(count+1)}>Counter : {count}</button>
+//            <button onClick={()=>setData(data+1)}>Data : {data}</button>
+//         </div>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// useRef Hook
+// import React from 'react'
+// import { useRef } from 'react'
+// function App() {
+//   const inputRef = useRef(null) ;
+//   const h1Ref = useRef(null) ;
+
+//   const inputHandler = () => {
+//     console.log(inputRef) ;
+//     inputRef.current.focus() ;
+//     inputRef.current.style.color = "red" ;
+//     inputRef.current.placeholder = "Enter password" ;
+//     inputRef.current.value = "123" ;
+//   }
+//   const h1Handler = () => {
+//     h1Ref.current.style.color = "blue"
+//   }
+//   const toggleHandler = () => {
+//     if(inputRef.current.style.display != 'none') {
+//       inputRef.current.style.display = 'none'
+//     }
+//     else {
+//       inputRef.current.style.display = 'inline'
+//     }
+//   }
+//   return (
+//     <div>
+//       <h1>useRef Hook</h1>
+//       <button onClick={toggleHandler}>Toggle</button>
+//       <input ref={inputRef} type="text" placeholder='Enter Username' />
+//       <button onClick={inputHandler}>Focus on input field</button>
+//       <h1 ref={h1Ref}>Code Step by Step</h1>
+//       <button onClick={h1Handler}>Handler</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// Uncontrolled Component
+// import React , {useRef} from 'react'
+
+// function App() {
+//   const userRef = useRef() 
+//   const passwordRef = useRef()
+//   const handleForm = (event) => {
+//     const user = document.querySelector("#user").value ;
+//     const password = document.querySelector("#password").value ;
+//     console.log(user) ;
+//   }
+//   const handleformRef = (event) => {
+//     event.preventDefault() ;
+//     const user = userRef.current.value ;
+//     const password = passwordRef.current.value ;
+//     console.log(user , password)
+//   }
+//   return (
+//     <div>
+//       {/* <h1>Uncontrolled Component</h1>
+//       <form action="" method='post' onSubmit={handleForm}>
+//         <input type="text" id='user' placeholder='Enter user name' /> <br /><br />
+//         <input type="password" id='password' placeholder='Enter password' /> <br /><br />
+//         <button>Submit</button>
+//       </form>  */}
+
+//        <h1>Uncontrolled Component with useRef </h1>
+//        <form action="" method='post' onSubmit={handleformRef}>
+//         <input type="text" ref={userRef} id='userRef' placeholder='Enter user name' />
+//         <br /><br />
+//         <input type="password" ref={passwordRef} id='passwordRef' placeholder='Enter password'  />
+//         <br /><br />
+//         <button>Submit with Ref</button> 
+//       </form>
+//     </div> 
+
+//   )
+// }
+
+// export default App
+
+
+
+// Pass function in Component as Props 
+import React from 'react'
+import User2 from './User2'
 function App() {
-    const [color , setColor] = useState("green")
+  const displayName = (name) => {
+    alert(name)
+  }
+  const getUser = () => {
+    alert("get user function called")
+  }
   return (
     <div>
-        <h1>Digital Clock</h1>
-        <select onChange={(event)=>setColor(event.target.value)}>
-            <option value={"red"}>Red</option>
-            <option value={"blue"}>Blue</option>
-            <option value={"green"}>Green</option>
-            <option value={"orange"}>Orange</option>
-        </select>
-        <Clock color={color}/>
+      <User2 displayName={displayName} name="Harsh" getUser={getUser}/>
+      <User2 displayName={displayName} name="Peter" getUser={getUser}/>
+      <User2 displayName={displayName} name="Bruce" getUser={getUser}/>
     </div>
   )
 }
