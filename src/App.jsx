@@ -543,20 +543,51 @@
 
 
 // Pass function in Component as Props 
+// import React from 'react'
+// import User2 from './User2'
+// function App() {
+//   const displayName = (name) => {
+//     alert(name)
+//   }
+//   const getUser = () => {
+//     alert("get user function called")
+//   }
+//   return (
+//     <div>
+//       <User2 displayName={displayName} name="Harsh" getUser={getUser}/>
+//       <User2 displayName={displayName} name="Peter" getUser={getUser}/>
+//       <User2 displayName={displayName} name="Bruce" getUser={getUser}/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
 import React from 'react'
-import User2 from './User2'
+import {useFormStatus} from 'react-dom'
 function App() {
-  const displayName = (name) => {
-    alert(name)
+  const handleSubmit = async() => {
+    await new Promise(res => setTimeout(res,2000))
+    console.log("Submit")
   }
-  const getUser = () => {
-    alert("get user function called")
+  function Customerform() {
+    const {pending} = useFormStatus() 
+    return (
+      <div>
+        <input type="text" placeholder='Enter Name' /> <br /><br />
+        <input type="password" placeholder='Enter password' /> <br /><br />
+        <button disabled={pending}> {pending?'Submitting...':'Submit'}</button>
+      </div>
+    )
   }
   return (
     <div>
-      <User2 displayName={displayName} name="Harsh" getUser={getUser}/>
-      <User2 displayName={displayName} name="Peter" getUser={getUser}/>
-      <User2 displayName={displayName} name="Bruce" getUser={getUser}/>
+        <form action="handleSubmit">
+          <Customerform/>
+        </form>
     </div>
   )
 }
