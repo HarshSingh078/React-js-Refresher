@@ -565,29 +565,46 @@
 
 
 
+// useFormStatus Hook 
+// import React from 'react'
+// import {useFormStatus} from 'react-dom'
+// function App() {
+//   const handleSubmit = async() => {
+//     await new Promise(res => setTimeout(res,2000))
+//     console.log("Submit")
+//   }
+//   function Customerform() {
+//     const {pending} = useFormStatus() 
+//     return (
+//       <div>
+//         <input type="text" placeholder='Enter Name' /> <br /><br />
+//         <input type="password" placeholder='Enter password' /> <br /><br />
+//         <button disabled={pending}> {pending?'Submitting...':'Submit'}</button>
+//       </div>
+//     )
+//   }
+//   return (
+//     <div>
+//         <form action="handleSubmit">
+//           <Customerform/>
+//         </form>
+//     </div>
+//   )
+// }
 
-import React from 'react'
-import {useFormStatus} from 'react-dom'
+// export default App
+
+
+
+
+// useId Hook
+import React , {useId} from 'react'
+
 function App() {
-  const handleSubmit = async() => {
-    await new Promise(res => setTimeout(res,2000))
-    console.log("Submit")
-  }
-  function Customerform() {
-    const {pending} = useFormStatus() 
-    return (
-      <div>
-        <input type="text" placeholder='Enter Name' /> <br /><br />
-        <input type="password" placeholder='Enter password' /> <br /><br />
-        <button disabled={pending}> {pending?'Submitting...':'Submit'}</button>
-      </div>
-    )
-  }
+  const name = useId()
   return (
     <div>
-        <form action="handleSubmit">
-          <Customerform/>
-        </form>
+      <h1>{name}</h1>
     </div>
   )
 }
