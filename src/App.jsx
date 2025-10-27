@@ -699,27 +699,136 @@
 
 
 // Custom Hooks
-import React from 'react'
-import useToggle from './useToggle'
-function App() {
-  const [value , toggleValue] = useToggle(true)
-  const [data , setData] = useToggle(true)
-  return (
-    <div>
-      <button onClick={toggleValue}>Toggle Heading</button>
-      <button onClick={()=>toggleValue(false)}>Hide Heading</button>
-      <button onClick={()=>toggleValue(true)}>Show Heading</button>
-      {
-        value ? <h1>Custom Hooks</h1> : null 
-      }
-      <button onClick={setData}>Toggle Heading</button>
-      <button onClick={()=>setData(false)}>Hide Heading</button>
-      <button onClick={()=>setData(true)}>Show Heading</button>
-      {
-        data ? <h1>Second Heading</h1> : null 
-      }
-    </div>
-  )
-}
+// import React from 'react'
+// import useToggle from './useToggle'
+// function App() {
+//   const [value , toggleValue] = useToggle(true)
+//   const [data , setData] = useToggle(true)
+//   return (
+//     <div>
+//       <button onClick={toggleValue}>Toggle Heading</button>
+//       <button onClick={()=>toggleValue(false)}>Hide Heading</button>
+//       <button onClick={()=>toggleValue(true)}>Show Heading</button>
+//       {
+//         value ? <h1>Custom Hooks</h1> : null 
+//       }
+//       <button onClick={setData}>Toggle Heading</button>
+//       <button onClick={()=>setData(false)}>Hide Heading</button>
+//       <button onClick={()=>setData(true)}>Show Heading</button>
+//       {
+//         data ? <h1>Second Heading</h1> : null 
+//       }
+//     </div>
+//   )
+// }
 
-export default App
+// export default App
+
+
+
+
+// React Router 
+// import React from 'react'
+// import {BrowserRouter , Routes , Route , Link} from "react-router"
+// function App() {
+//   return (
+//     <div>
+//         <BrowserRouter>
+//           <Link to="/">Home</Link>
+//           <Link to="/about">About</Link>
+//           <Link to="/contact">Contact</Link>
+//           <Routes>
+//             <Route path='/' element={<h1>Home</h1>}></Route>
+//             <Route path='/about' element={<h1>About</h1>}></Route>
+//             <Route path='/contact' element={<h1>Contact</h1>}></Route>
+//           </Routes>
+//         </BrowserRouter>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// Header with React Router
+// import React from 'react'
+// import NavBar from './NavBar'
+// function App() {
+//   return (
+//     <div>
+//       <NavBar/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// 404 Page 
+// import React from 'react'
+// import {BrowserRouter, Route , Routes} from "react-router-dom" 
+// import PageNotFound from './PageNotFound'
+// function App() {
+//   return (
+//     <div>
+//       <BrowserRouter>
+//       <Routes>
+
+//       <Route path='/*' element={<PageNotFound/>}></Route>
+//       </Routes>
+//       </BrowserRouter>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// Fetch data from API with GET - 
+// import React from 'react'
+// import { useEffect , useState } from 'react'
+// function App() {
+//   const [usersData , setUsersData] = useState([]) 
+//   useEffect(()=> {
+//     getUsersData() ;
+//   },[])
+//   async function getUsersData() {
+//       const url = "https://dummyjson.com/users"
+//       let response =  await fetch(url) 
+//       response = await response.json() ;
+//       setUsersData(response.users)
+//   }
+//   console.log(usersData)
+//   return (
+//     <div>
+//         <ul>
+//           <li>First Name</li>
+//           <li>Last Name</li>
+//           <li>Age</li>
+//         </ul>
+      
+//       {
+//         usersData && usersData.map((user)=> (
+//           <ul>
+//             <li>{user.firstName}</li>
+//             <li>{user.lastName}</li>
+//             <li>{user.age}</li>
+//           </ul>
+//         ))
+//       }
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// 
