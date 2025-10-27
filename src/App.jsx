@@ -598,13 +598,126 @@
 
 
 // useId Hook
-import React , {useId} from 'react'
+// import React , {useId} from 'react'
 
+// function App() {
+//   const name = useId()
+//   return (
+//     <div>
+//       <h1>{name}</h1>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// Derived State
+// import React from 'react'
+// import { useState } from 'react'
+// function App() {
+//   const [users , setUsers] = useState([])
+//   const [user , setUser] = useState('')
+//   const handleAddUsers = () => {
+//     setUsers([...users , user])
+//   }
+//   const total = users.length 
+//   const last = users[users.length-1] 
+//   const unique = [...new Set(users)].length
+//   return (
+//     <div>
+//       <h2>Total users : {total}</h2>
+//       <h2>Last user : {last}</h2>
+//       <h2>Unique Total user : {unique}</h2>
+//       <input type="text" onChange={(event)=>setUser(event.target.value)} placeholder='Add new user' />
+//       <button onClick={handleAddUsers}>Add User</button>
+//       {
+//         users.map((item,index)=> (
+//           <h4 key={index}>{item}</h4>
+//         ))
+//       }
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// Lifting state up 
+// import React from 'react'
+// import AddUser from './AddUser'
+// import DisplayUser from './DisplayUser'
+// import { useState } from 'react'
+// function App() {
+//   const [user , setUser] = useState('')
+//   return (
+//     <div>
+//         <AddUser setUser={setUser}/>
+//         <DisplayUser user={user}/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// Updating Objects
+// import React , {useState} from 'react'
+
+// function App() {
+//   const [data , setData] = useState( { 
+//     name : "Harsh" , address : {city:"Noida" , country : "India"}
+//   })
+//   const handleName = (val) => {
+//     data.name = val 
+//     setData({...data})
+//   }
+//   const handleCity = (city) => {
+//     data.address.city = city 
+//     setData({...data})
+//   }
+//   return (
+//     <div>
+//         <input type="text" onChange={(event)=>handleName(event.target.value)} placeholder='Update Name' />
+//         <input type="text" onChange={(event)=>handleCity(event.target.value)} placeholder='Enter City' />
+//         <h2>Name : {data.name}</h2>
+//         <h2>City : {data.address.city}</h2>
+//         <h2>Country : {data.address.country}</h2>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+// Custom Hooks
+import React from 'react'
+import useToggle from './useToggle'
 function App() {
-  const name = useId()
+  const [value , toggleValue] = useToggle(true)
+  const [data , setData] = useToggle(true)
   return (
     <div>
-      <h1>{name}</h1>
+      <button onClick={toggleValue}>Toggle Heading</button>
+      <button onClick={()=>toggleValue(false)}>Hide Heading</button>
+      <button onClick={()=>toggleValue(true)}>Show Heading</button>
+      {
+        value ? <h1>Custom Hooks</h1> : null 
+      }
+      <button onClick={setData}>Toggle Heading</button>
+      <button onClick={()=>setData(false)}>Hide Heading</button>
+      <button onClick={()=>setData(true)}>Show Heading</button>
+      {
+        data ? <h1>Second Heading</h1> : null 
+      }
     </div>
   )
 }
